@@ -42,7 +42,7 @@ $question='luzern';
 //exit;
 
 //$yourApiKey = getenv('YOUR_API_KEY');
-$client = OpenAI::client($apiKey);
+/*$client = OpenAI::client($apiKey);
 
 $result = $client->chat()->create([
     'model' => 'gpt-4',
@@ -50,15 +50,15 @@ $result = $client->chat()->create([
         ['role' => 'user', 'content' => $question],
     ],
 ]);
-
+*/
 
 $data=[];
-$data['answer'] = $result['choices'][0]['message']['content'];
+$data['answer'] = 'bla';  //  $result['choices'][0]['message']['content'];
 
 header('Content-Type: application/json; charset=utf-8');
+
+
+
 echo json_encode($data);
-
-
-//print_r($result);
 
 
