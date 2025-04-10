@@ -50,11 +50,13 @@ $result = $client->chat()->create([
         ['role' => 'user', 'content' => $question],
     ],
 ]);
-
+*/
 
 $data=[];
-$data['answer'] = $result['choices'][0]['message']['content'];http_response_code(200);
+/*$data['answer'] = $result['choices'][0]['message']['content'];http_response_code(200);
 */
+
+$data['answer']='asdf';
 
 header('Access-Control-Allow-Origin: *');
 //header('Access-Control-Allow-Methods: "GET, POST, PUT, DELETE,OPTIONS"');
