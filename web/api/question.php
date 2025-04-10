@@ -33,7 +33,9 @@ $json=json_decode($body,true);
 
 
 //$question = $_POST['question'];
-$question = $json['question'];
+//$question = $json['question'];
+$question='luzern';
+
 
 //echo print_r($_ENV);
 
