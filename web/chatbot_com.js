@@ -54,6 +54,9 @@ class LtagChatbot extends HTMLElement {
         this.p.innerText = "";
         this.appendChild(this.p);
 
+        // neue frage stellen
+
+
     }
 
 }
