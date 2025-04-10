@@ -29,12 +29,12 @@ $body=file_get_contents('php://input');
 
 //echo $body;
 
-//$json=json_decode($body,true);
+$json=json_decode($body,true);
 
 
 //$question = $_POST['question'];
-//$question = $json['question'];
-$question='luzern';
+$question = $json['question'];
+//$question='luzern';
 
 
 //echo print_r($_ENV);
@@ -56,7 +56,7 @@ $data=[];
 /*$data['answer'] = $result['choices'][0]['message']['content'];http_response_code(200);
 */
 
-$data['answer']='asdf';
+$data['answer']=$question;  // 'asdf';
 
 header('Access-Control-Allow-Origin: *');
 //header('Access-Control-Allow-Methods: "GET, POST, PUT, DELETE,OPTIONS"');
