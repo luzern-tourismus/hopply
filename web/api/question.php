@@ -53,13 +53,13 @@ $question = $json['question'];
 //$yourApiKey = getenv('YOUR_API_KEY');
 $client = OpenAI::client($apiKey);
 
-/*
+
 $result = $client->chat()->create([
     'model' => 'gpt-4',
     'messages' => [
         ['role' => 'user', 'content' => $question],
     ],
-]);*/
+]);
 
 
 $data=[];
