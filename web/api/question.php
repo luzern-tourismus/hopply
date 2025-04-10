@@ -53,7 +53,7 @@ $result = $client->chat()->create([
 
 
 $data=[];
-$data['answer'] = $result['choices'][0]['message']['content'];http_response_code(200);
+$data['answer'] = $result['choices'][0]['message']['content'];    //http_response_code(200);
 
 
 //$data['answer']=$question;  // 'asdf';
