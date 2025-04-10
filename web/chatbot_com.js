@@ -8,12 +8,12 @@ class LtagChatbot extends HTMLElement {
     p;
 
 
-
-
     connectedCallback() {
 
+        let domain = "https://chatbot.nemundo.ch"
+
         let local = this;
-        let url = "/api/question.php";
+        let url = domain + "/api/question.php";
 
         this.textarea = document.createElement("textarea");
         this.textarea.className = "hopply-textarea";
@@ -28,20 +28,21 @@ class LtagChatbot extends HTMLElement {
             local.p.innerText = "Hopply denkt nach ...";
 
 
-            fetch(url, { method: "POST", headers: {
-                "Content-Type": "application/json",
-              }, body: JSON.stringify({ question: local.textarea.value }) })
+            fetch(url, {
+                method: "POST", headers: {
+                    "Content-Type": "application/json",
+                }, body: JSON.stringify({question: local.textarea.value})
+            })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
-                    //console.log(data.total_count);
+                        console.log(data);
+                        //console.log(data.total_count);
 
-                    local.p.innerText = data.answer;
+                        local.p.innerText = data.answer;
 
-                }
+                    }
                 )
                 .catch(error => console.error('Error:', error));
-
 
 
         });
