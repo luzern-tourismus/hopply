@@ -14,7 +14,7 @@ require_once('../../vendor/autoload.php');
 //$dotenv->load();
 
 //$apiKey = $dotenv->required('OPEN_AI_API_KEY');
-//$apiKey = getenv('OPEN_AI_API_KEY');
+$apiKey = getenv('OPEN_AI_API_KEY');
 
 //echo 'key:' . $apiKey;
 
@@ -25,16 +25,16 @@ $apiKey=$ini_array['OPEN_AI_API_KEY'];
 //echo $apiKey;
 //exit;
 
-//$body=file_get_contents('php://input');
+$body=file_get_contents('php://input');
 
 //echo $body;
 
-//$json=json_decode($body,true);
+$json=json_decode($body,true);
 
 
 //$question = $_POST['question'];
-//$question = $json['question'];
-$question='luzern';
+$question = $json['question'];
+//$question='luzern';
 
 
 //echo print_r($_ENV);
@@ -42,7 +42,7 @@ $question='luzern';
 //exit;
 
 //$yourApiKey = getenv('YOUR_API_KEY');
-/*$client = OpenAI::client($apiKey);
+$client = OpenAI::client($apiKey);
 
 $result = $client->chat()->create([
     'model' => 'gpt-4',
@@ -50,10 +50,10 @@ $result = $client->chat()->create([
         ['role' => 'user', 'content' => $question],
     ],
 ]);
-*/
+
 
 $data=[];
-$data['answer'] = 'bla';  //  $result['choices'][0]['message']['content'];http_response_code(200);
+$data['answer'] = $result['choices'][0]['message']['content'];http_response_code(200);
 
 
 header('Access-Control-Allow-Origin: *');
