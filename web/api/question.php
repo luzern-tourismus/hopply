@@ -66,7 +66,7 @@ $data=[];
 $data['answer'] = $result['choices'][0]['message']['content'];    //http_response_code(200);
 
 
-$data['answer']=$question;  // 'asdf';
+//$data['answer']=$question;  // 'asdf';
 
 
 
