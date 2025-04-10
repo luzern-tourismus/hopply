@@ -54,10 +54,8 @@ $result = $client->chat()->create([
 
 $data=[];
 $data['answer'] = 'bla';  //  $result['choices'][0]['message']['content'];
-
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=utf-8');
-
-
 
 echo json_encode($data);
 
