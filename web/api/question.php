@@ -59,6 +59,8 @@ $data['answer'] = 'bla';  //  $result['choices'][0]['message']['content'];http_r
 header('Access-Control-Allow-Origin: *');
 //header('Access-Control-Allow-Methods: "GET, POST, PUT, DELETE,OPTIONS"');
 //Access-Control-Allow-Methods
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+// 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 
 //header('Content-Type: application/json; charset=utf-8');
 header("HTTP/1.1 200 OK");
