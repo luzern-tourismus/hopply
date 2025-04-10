@@ -25,16 +25,16 @@ $apiKey=$ini_array['OPEN_AI_API_KEY'];
 //echo $apiKey;
 //exit;
 
-$body=file_get_contents('php://input');
+//$body=file_get_contents('php://input');
 
 //echo $body;
 
-$json=json_decode($body,true);
+//$json=json_decode($body,true);
 
 
 //$question = $_POST['question'];
-$question = $json['question'];
-//$question='luzern';
+//$question = $json['question'];
+$question='luzern';
 
 
 //echo print_r($_ENV);
