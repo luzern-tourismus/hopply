@@ -44,19 +44,20 @@ $question = $json['question'];
 //$yourApiKey = getenv('YOUR_API_KEY');
 $client = OpenAI::client($apiKey);
 
+/*
 $result = $client->chat()->create([
     'model' => 'gpt-4',
     'messages' => [
         ['role' => 'user', 'content' => $question],
     ],
-]);
+]);*/
 
 
 $data=[];
-$data['answer'] = $result['choices'][0]['message']['content'];    //http_response_code(200);
+//$data['answer'] = $result['choices'][0]['message']['content'];    //http_response_code(200);
 
 
-//$data['answer']=$question;  // 'asdf';
+$data['answer']=$question;  // 'asdf';
 
 header('Access-Control-Allow-Origin: *');
 //header('Access-Control-Allow-Methods: "GET, POST, PUT, DELETE,OPTIONS"');
