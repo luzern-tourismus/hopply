@@ -25,13 +25,7 @@ class LtagChatbot extends HTMLElement {
         this.button.innerText = "Hopply fragen";
         this.button.addEventListener("click", function () {
 
-            //alert(local.textarea.value);
-
-            local.p.innerText = "Loading data ...";
-
-            //let postData = [];
-            //postData["question"] = local.textarea.value;
-
+            local.p.innerText = "Hopply denkt nach ...";
 
 
             fetch(url, { method: "POST", headers: {
@@ -56,16 +50,8 @@ class LtagChatbot extends HTMLElement {
 
         this.p = document.createElement("p");
         this.p.className = "hopply-p";
-        this.p.innerText = "hier steht die antwort";
+        this.p.innerText = "";
         this.appendChild(this.p);
-
-
-
-
-
-
-
-
 
     }
 
