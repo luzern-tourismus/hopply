@@ -59,8 +59,9 @@ $data['answer'] = 'bla';  //  $result['choices'][0]['message']['content'];http_r
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods = "GET, POST, PUT, DELETE,OPTIONS"');
 header('Content-Type: application/json; charset=utf-8');
+header("HTTP/1.1 200 OK");
 
-http_response_code(200);
+//http_response_code(200);
 
 /*
 Access-Control-Allow-Origin = "*"
