@@ -14,8 +14,9 @@ class LtagChatbot extends HTMLElement {
 
     connectedCallback() {
 
-        let domain = window.location.origin;
-        alert(domain);
+        let domain = "https://chatbot.nemundo.ch"
+        //let domain = window.location.origin;  // "http://localhost"
+
 
         let local = this;
         let url = domain + "/api/question.php";
