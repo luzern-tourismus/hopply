@@ -45,5 +45,9 @@ hopply-chatbot {
     font-weight: bold;
     padding: 5px;
     margin: 0;
+    margin-bottom: 10px;
+}
 
+.hopply-loader {
+    color: white;
 }
