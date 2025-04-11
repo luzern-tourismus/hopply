@@ -14,8 +14,8 @@ class LtagChatbot extends HTMLElement {
 
     connectedCallback() {
 
-        //let domain = "https://chatbot.nemundo.ch"
-        let domain = window.location.origin;  // "http://localhost"
+        let domain = window.location.origin;
+        alert(domain);
 
         let local = this;
         let url = domain + "/api/question.php";
@@ -37,7 +37,7 @@ class LtagChatbot extends HTMLElement {
             //local.button.remove();
 
             local.wait = document.createElement("img");
-            local.wait.src = "/img/wait.svg";
+            local.wait.src = domain +"/img/wait.svg";
             local.appendChild(local.wait);
 
 
