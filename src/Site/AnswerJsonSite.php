@@ -38,6 +38,7 @@ class AnswerJsonSite extends AbstractSite
         $json = json_decode($body, true);
 
 
+        $data=[];
         $reader = new OstereiReader();
         foreach ($reader->getData() as $ostereiRow) {
 
