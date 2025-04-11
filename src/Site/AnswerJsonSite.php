@@ -92,7 +92,7 @@ Daten für die Osternester/Ostereier:
 
 
         $data = [];
-        $data['answer'] = $chatbot->getHtmlAnswer();  // $result['choices'][0]['message']['content'];
+        $data['answer'] = $chatbot->getAnswer();  // getHtmlAnswer();  // $result['choices'][0]['message']['content'];
 
         echo json_encode($data);
 

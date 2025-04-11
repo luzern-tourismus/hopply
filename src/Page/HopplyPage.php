@@ -94,7 +94,7 @@ Daten für die Osternester/Ostereier:
         }
 
 
-        $copy = new AdminCopyTextBox($layout);
+        /*$copy = new AdminCopyTextBox($layout);
         $copy->value=AnswerJsonSite::$site->getUrl();  // getUrlWithDomain();*/
 
 

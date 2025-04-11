@@ -16,7 +16,7 @@ class Chatbot extends AbstractBase
     public $prompt;
 
 
-    public function askQuestion()
+    public function getAnswer()
     {
 
         $apiKey = (new ProjectConfigReader())->getValue('open_ai_api_key');
@@ -45,7 +45,7 @@ class Chatbot extends AbstractBase
     public function getHtmlAnswer()
     {
 
-        $answer = $this->askQuestion();
+        $answer = $this->getAnswer();
 
         $html = (new Html($answer))->getValue();
 
