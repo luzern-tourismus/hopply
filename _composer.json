@@ -1,0 +1,7 @@
+{
+    "require": {
+        "nemundo/framework": "*"
+    },
+    "minimum-stability": "dev"
+
+}

@@ -1,12 +1,19 @@
 {
-    "require": {
-        "openai-php/client": "^0.10.3",
-        "symfony/http-client": "^7.2",
-        "nyholm/psr7": "^1.8"
-    },
-    "config": {
-        "allow-plugins": {
-            "php-http/discovery": true
+    "name": "luzern-tourismus/hopply",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LuzernTourismus\\Hopply\\": "src/"
         }
+    },
+    "authors": [
+        {
+            "name": "Urs Lang",
+            "email": "urs.lang@luzern.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "nemundo/framework": "*"
     }
 }
