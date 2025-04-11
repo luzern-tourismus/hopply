@@ -28,3 +28,16 @@ mail_attachment
 mail_inline_image
 mail_queue
 mail_mail_server
+content_application_content_type
+content_content
+content_action
+content_content_index
+content_content_type
+content_content_type_collection
+content_content_type_collection_content_type
+content_view
+content_view_content_type
+webservice_key
+webservice_service_request
+hopply_osterei
+hopply_system_prompt

@@ -1,0 +1,13 @@
+2025-04-11 14:28:48	File already exists. Filename: C:\git\hopply\src\Parameter\OstereiParameter.php
+2025-04-11 15:11:47	Property Write does not exist:parameterName
+2025-04-11 15:11:47	Property Write does not exist:parameterName
+2025-04-11 15:11:47	Property Write does not exist:parameterName
+2025-04-11 15:12:26	Property Write does not exist:parameterName
+2025-04-11 15:12:26	Property Write does not exist:parameterName
+2025-04-11 15:12:26	Property Write does not exist:parameterName
+2025-04-11 15:12:30	Property Write does not exist:parameterName
+2025-04-11 15:12:30	Property Write does not exist:parameterName
+2025-04-11 15:12:30	Property Write does not exist:parameterName
+2025-04-11 15:23:57	Query Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hopply.content_content' doesn't existSql: SELECT COUNT(*) count_field FROM `content_content` WHERE content_content.`content_type` = :field_7 AND content_content.`data_id` = :field_8;
+2025-04-11 15:23:58	Query Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hopply.content_content' doesn't existSql: INSERT INTO `content_content` (`data_id`,`subject`,`content_type`) VALUES (:key0,:key1,:key2);
+2025-04-11 15:23:58	Query Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hopply.content_action' doesn't existSql: SELECT content_action.`id` `content_action_id`,content_action.`action` `content_action_action`,content_action.`php_class` `content_action_php_class`,content_action.`menu_active` `content_action_menu_active`,content_action.`setup_status` `content_action_setup_status` FROM `content_action` content_action;

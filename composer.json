@@ -14,6 +14,16 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "nemundo/framework": "*"
+        "nemundo/framework": "*",
+        "nemundo/content": "dev-master",
+        "chillerlan/php-qrcode": "dev-main",
+        "openai-php/client": "dev-main",
+        "symfony/http-client": "7.3.x-dev",
+        "nyholm/psr7": "^1.8@dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }

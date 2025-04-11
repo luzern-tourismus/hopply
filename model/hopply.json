@@ -1,0 +1,93 @@
+{
+    "app": "Hopply",
+    "name": "hopply",
+    "namespace": "LuzernTourismus\\Hopply",
+    "is_deleted": false,
+    "model": [
+        {
+            "template": "default",
+            "model_id": "5ab8b8a0-213e-4b41-b141-f88bc590a2e8",
+            "label": "Osterei",
+            "class_name": "Osterei",
+            "table_name": "hopply_osterei",
+            "namespace": "LuzernTourismus\\Hopply\\Data\\Osterei",
+            "row_class_name": "",
+            "primary_index": "auto_increment",
+            "is_deleted": false,
+            "type": [
+                {
+                    "type": "large_text",
+                    "label": "Tipp",
+                    "field_name": "tipp",
+                    "variable_name": "tipp",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "yes_no",
+                    "label": "Gefunden",
+                    "field_name": "gefunden",
+                    "variable_name": "gefunden",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "date_time",
+                    "label": "Gefunden Date Time",
+                    "field_name": "gefunden_date_time",
+                    "variable_name": "gefundenDateTime",
+                    "allow_null": true,
+                    "is_deleted": false
+                },
+                {
+                    "type": "text",
+                    "label": "Unique Id",
+                    "field_name": "unique_id",
+                    "variable_name": "uniqueId",
+                    "allow_null": false,
+                    "is_deleted": false,
+                    "length": "36"
+                },
+                {
+                    "type": "number",
+                    "label": "Nummer",
+                    "field_name": "nummer",
+                    "variable_name": "nummer",
+                    "allow_null": false,
+                    "is_deleted": false
+                }
+            ],
+            "index": [
+                {
+                    "index_name": "unique_id",
+                    "index_type": "unique_index",
+                    "field_name": [
+                        "unique_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "template": "default",
+            "model_id": "d64bc7d7-f54e-459b-862f-5aa0c1af2f7c",
+            "label": "System Prompt",
+            "class_name": "SystemPrompt",
+            "table_name": "hopply_system_prompt",
+            "namespace": "LuzernTourismus\\Hopply\\Data\\SystemPrompt",
+            "row_class_name": "",
+            "primary_index": "auto_increment",
+            "is_deleted": false,
+            "type": [
+                {
+                    "type": "large_text",
+                    "label": "System Prompt",
+                    "field_name": "system_prompt",
+                    "variable_name": "systemPrompt",
+                    "allow_null": false,
+                    "is_deleted": false
+                }
+            ],
+            "index": []
+        }
+    ]
+}
