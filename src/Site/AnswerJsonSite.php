@@ -76,7 +76,9 @@ Daten für die Osternester/Ostereier:
 
 ' . $jsonText;
 
-        $question = $json['question'];
+        //$question = $json['question'];
+
+        $chatbot->prompt=$json['question'];
 
         /*$client = OpenAI::client($apiKey);
 
