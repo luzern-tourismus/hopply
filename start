@@ -1,0 +1,3 @@
+cd web
+php -S localhost:20845
+x-www-browser http://localhost:20845/
