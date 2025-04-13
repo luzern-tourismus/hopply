@@ -21,7 +21,7 @@ class LtagChatbot extends HTMLElement {
 
         //domain = document.currentScript.src
         //console.log(document.currentScript);
-        let domain = 'httsp://data.luzern.com';
+        let domain = 'https://data.luzern.com';
 
         let local = this;
         let url = domain + "/public/Hopply-public2/answer-public";
