@@ -42,8 +42,10 @@ class Chatbot extends AbstractBase
 
         $answer = $result['choices'][0]['message']['content'];
 
-        $answer = (new Text($answer))->replace('ß','ss')->getValue();
-
+        $answer = (new Text($answer))
+            ->replace('ß', 'ss')
+            ->replace('ß', 'ss')
+            ->getValue();
 
         return $answer;
 

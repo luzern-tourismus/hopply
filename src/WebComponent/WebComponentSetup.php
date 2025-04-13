@@ -3,7 +3,6 @@
 namespace LuzernTourismus\Hopply\WebComponent;
 
 use LuzernTourismus\Hopply\HopplyProject;
-use Nemundo\Com\Package\Setup\PackageSetup;
 use Nemundo\Core\Base\AbstractBase;
 use Nemundo\Core\File\FileCopy;
 use Nemundo\Core\Path\Path;
@@ -21,6 +20,7 @@ class WebComponentSetup extends AbstractBase
         $comPath->createPath();
 
         $copy = new FileCopy();
+        $copy->overwriteExistingFile = true;
         $copy->sourceFilename = (new Path($project->path))->addParentPath()->addPath('com')->addPath($filename)->getFullFilename();
         $copy->destinationFilename = $comPath->addPath($filename)->getFullFilename();
         $copy->copyFile();
