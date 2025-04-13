@@ -89,8 +89,8 @@ class HopplyPage extends AbstractTemplateDocument
         }
 
 
-        /*$copy = new AdminCopyTextBox($layout);
-        $copy->value=AnswerJsonSite::$site->getUrlWithDomain();*/
+        $copy = new AdminCopyTextBox($layout);
+        $copy->value=AnswerJsonSite::$site->getUrlWithDomain();
 
 
 
