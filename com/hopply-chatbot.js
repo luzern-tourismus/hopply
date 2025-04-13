@@ -22,7 +22,6 @@ class LtagChatbot extends HTMLElement {
         let url = domain + "/public/Hopply-public2/answer-public";
 
 
-
         this.textarea = document.createElement("textarea");
         this.textarea.className = "hopply-textarea";
         this.textarea.placeholder = "Frage Hopply etwas ...";
@@ -40,7 +39,7 @@ class LtagChatbot extends HTMLElement {
             //local.button.remove();
 
             local.wait = document.createElement("img");
-            local.wait.src = domain +"/img/wait.svg";
+            local.wait.src = domain + "/com/hopply-wait.svg";
             local.appendChild(local.wait);
 
 
@@ -88,7 +87,7 @@ class LtagChatbot extends HTMLElement {
                         });
 
                         local.appendChild(local.button2);
-                    local.wait.remove();
+                        local.wait.remove();
 
                         //document.querySelector("*").style.cursor = "default";
                         /*document.querySelector("input").style.cursor = "default";
