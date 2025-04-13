@@ -4,6 +4,7 @@ namespace LuzernTourismus\Hopply\Chatbot;
 
 use Nemundo\Core\Base\AbstractBase;
 use Nemundo\Core\Type\Text\Html;
+use Nemundo\Core\Type\Text\Text;
 use Nemundo\Project\Config\ProjectConfigReader;
 
 class Chatbot extends AbstractBase
@@ -40,6 +41,8 @@ class Chatbot extends AbstractBase
 
 
         $answer = $result['choices'][0]['message']['content'];
+
+        $answer = (new Text($answer))->replace('ß','ss')->getValue();
 
 
         return $answer;
