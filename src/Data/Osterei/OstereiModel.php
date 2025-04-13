@@ -91,5 +91,9 @@ $index = new \Nemundo\Model\Definition\Index\ModelUniqueIndex($this);
 $index->indexName = "unique_id";
 $index->addType($this->uniqueId);
 
+$index = new \Nemundo\Model\Definition\Index\ModelUniqueIndex($this);
+$index->indexName = "nummer";
+$index->addType($this->nummer);
+
 }
 }

@@ -64,6 +64,13 @@
                     "field_name": [
                         "unique_id"
                     ]
+                },
+                {
+                    "index_name": "nummer",
+                    "index_type": "unique_index",
+                    "field_name": [
+                        "nummer"
+                    ]
                 }
             ]
         },

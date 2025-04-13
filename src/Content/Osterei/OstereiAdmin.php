@@ -22,6 +22,7 @@ class OstereiAdmin extends AbstractContentAdmin
         $table = new AdminTable($this);
 
         $reader = new OstereiReader();
+        $reader->addOrder($reader->model->nummer);
 
         (new AdminTableHeader($table))
             ->addText($reader->model->nummer->label)
@@ -39,10 +40,15 @@ class OstereiAdmin extends AbstractContentAdmin
             $row
                 ->addText($easterEggRow->nummer)
                 ->addText($easterEggRow->tipp)
-                ->addYesNo($easterEggRow->gefunden)
-                ->addText($easterEggRow->gefundenDateTime->getShortDateTimeLeadingZeroFormat())
-                ->addIconActionSite($this->getEditSite($easterEggRow->id))
-                ->addIconActionSite($this->getDeleteSite($easterEggRow->id));
+                ->addYesNo($easterEggRow->gefunden);
+
+            if ($easterEggRow->gefunden) {
+                $row->addText($easterEggRow->gefundenDateTime->getShortDateTimeLeadingZeroFormat());
+            } else {
+                $row->addEmpty();
+            }
+                $row->addIconActionSite($this->getEditSite($easterEggRow->id));
+                //->addIconActionSite($this->getDeleteSite($easterEggRow->id));
 
             $site = clone(QrScanSite::$site);
             $site->addParameter(new OstereiParameter($easterEggRow->uniqueId));
@@ -50,7 +56,7 @@ class OstereiAdmin extends AbstractContentAdmin
             $data = $site->getUrlWithDomain();   //   'https://www.srf.ch/';  // 'otpauth://totp/test?secret=B3JX4VCVJDVNXNZ5&issuer=chillerlan.net';
 
 
-            $row->addHyperlink($data);
+            $row->addHyperlink($data,'QR Scan',true);
 
 // quick and simple:
             //echo '<img src="'.(new QRCode)->render($data).'" alt="QR Code" />';

@@ -40,6 +40,7 @@ class AnswerJsonSite extends AbstractSite
 
         $data=[];
         $reader = new OstereiReader();
+        $reader->addRandomOrder();
         foreach ($reader->getData() as $ostereiRow) {
 
             $row = [];

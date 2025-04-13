@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e272e9e2b0fceb1e42c6c67df7ecc65",
+    "content-hash": "cb3192cea275ab3351e137d91f7ed950",
     "packages": [
         {
             "name": "chillerlan/php-qrcode",
@@ -553,6 +553,46 @@
                 "source": "https://github.com/nemundo/kml/tree/master"
             },
             "time": "2023-05-21T09:42:10+00:00"
+        },
+        {
+            "name": "nemundo/pdf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nemundo/pdf.git",
+                "reference": "b7151e73f06e9b2be7caf4f9bf755129bdbe8974"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nemundo/pdf/zipball/b7151e73f06e9b2be7caf4f9bf755129bdbe8974",
+                "reference": "b7151e73f06e9b2be7caf4f9bf755129bdbe8974",
+                "shasum": ""
+            },
+            "require": {
+                "nemundo/framework": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nemundo\\Pdf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Urs Lang",
+                    "email": "urs.lang@nemundo.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/nemundo/pdf/issues",
+                "source": "https://github.com/nemundo/pdf/tree/master"
+            },
+            "time": "2025-01-12T11:49:36+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -2083,7 +2123,10 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "nemundo/content": 20,
-        "chillerlan/php-qrcode": 20
+        "chillerlan/php-qrcode": 20,
+        "openai-php/client": 20,
+        "symfony/http-client": 20,
+        "nyholm/psr7": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

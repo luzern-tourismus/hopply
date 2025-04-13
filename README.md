@@ -25,3 +25,10 @@ php -S localhost:9000 ./web
 
 git pull
 composer update
+
+
+
+## QR Code
+
+https://github.com/chillerlan/php-qrcode
+

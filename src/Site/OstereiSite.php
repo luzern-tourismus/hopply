@@ -11,6 +11,10 @@ class OstereiSite extends AbstractSite
     {
         $this->title = 'Osterei';
         $this->url = 'Osterei';
+
+        new PrintSite($this);
+        new ResetSite($this);
+
     }
 
     public function loadContent()

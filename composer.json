@@ -19,7 +19,8 @@
         "chillerlan/php-qrcode": "dev-main",
         "openai-php/client": "dev-main",
         "symfony/http-client": "7.3.x-dev",
-        "nyholm/psr7": "^1.8@dev"
+        "nyholm/psr7": "^1.8@dev",
+        "nemundo/pdf": "dev-master"
     },
     "config": {
         "allow-plugins": {

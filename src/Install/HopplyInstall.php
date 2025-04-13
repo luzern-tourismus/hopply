@@ -2,10 +2,17 @@
 
 namespace LuzernTourismus\Hopply\Install;
 
+use LuzernTourismus\Hopply\Application\HopplyApplication;
 use LuzernTourismus\Hopply\Data\HopplyModelCollection;
+use LuzernTourismus\Hopply\Data\Osterei\Osterei;
+use LuzernTourismus\Hopply\Script\CleanScript;
+use LuzernTourismus\Hopply\Script\QrBuilderScript;
 use LuzernTourismus\Hopply\Usergroup\HopplyUsergroup;
 use Nemundo\App\Application\Type\Install\AbstractInstall;
+use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\Content\Application\ContentApplication;
+use Nemundo\Core\Random\UniqueId;
+use Nemundo\Core\Structure\ForLoop;
 use Nemundo\Model\Setup\ModelCollectionSetup;
 use Nemundo\User\Setup\UsergroupSetup;
 
@@ -18,6 +25,24 @@ class HopplyInstall extends AbstractInstall
 
         (new ModelCollectionSetup())->addCollection(new HopplyModelCollection());
         (new UsergroupSetup())->addUsergroup(new HopplyUsergroup());
+        (new ScriptSetup(new HopplyApplication()))
+            //->addScript(new QrBuilderScript())
+            ->addScript(new CleanScript());
+
+        $loop = new ForLoop();
+        $loop->minNumber = 1;
+        $loop->maxNumber = 25;
+        foreach ($loop->getData() as $number) {
+
+            $data = new Osterei();
+            $data->ignoreIfExists = true;
+            $data->tipp = '';
+            $data->nummer = $number;
+            $data->gefunden = false;
+            $data->uniqueId = (new UniqueId())->getUniqueId();
+            $data->save();
+
+        }
 
     }
 }
