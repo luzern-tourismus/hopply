@@ -53,17 +53,17 @@ class OstereiAdmin extends AbstractContentAdmin
             $site = clone(QrScanSite::$site);
             $site->addParameter(new OstereiParameter($easterEggRow->uniqueId));
 
-            $data = $site->getUrlWithDomain();   //   'https://www.srf.ch/';  // 'otpauth://totp/test?secret=B3JX4VCVJDVNXNZ5&issuer=chillerlan.net';
+            $data = $site->getUrlWithDomain();
 
 
             $row->addHyperlink($data,'QR Scan',true);
 
-// quick and simple:
-            //echo '<img src="'.(new QRCode)->render($data).'" alt="QR Code" />';
+
+            /*
 
             $img = new Img($row);
             $img->src = (new QrCode)->render($data);
-            $img->width = 300;
+            $img->width = 300;*/
 
 
         }

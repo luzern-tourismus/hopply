@@ -3,9 +3,11 @@
 namespace LuzernTourismus\Hopply\Page;
 
 use LuzernTourismus\Hopply\Chatbot\Chatbot;
+use LuzernTourismus\Hopply\Com\ListBox\LargeLanguageModelListBox;
 use LuzernTourismus\Hopply\Com\Tab\HopplyTab;
 use LuzernTourismus\Hopply\Data\Osterei\OstereiReader;
 use LuzernTourismus\Hopply\Request\PromptRequest;
+use LuzernTourismus\Hopply\Request\SystemPromptRequest;
 use LuzernTourismus\Hopply\Site\AnswerJsonSite;
 use Nemundo\Admin\Com\Button\AdminSubmitButton;
 use Nemundo\Admin\Com\Copy\AdminCopyTextBox;
@@ -30,8 +32,17 @@ class HopplyPage extends AbstractTemplateDocument
 
         $form= new Form($layout);
 
-        $textarea = new AdminLargeTextBox($form);
-        $textarea->name = (new PromptRequest())->getRequestName();
+        $systemPrompt = new AdminLargeTextBox($form);
+        $systemPrompt->label = 'System Prompt';
+        $systemPrompt->name = (new SystemPromptRequest())->getRequestName();
+
+        $prompt = new AdminLargeTextBox($form);
+        $prompt->label = 'Prompt';
+        $prompt->name = (new PromptRequest())->getRequestName();
+
+        $llm = new LargeLanguageModelListBox($form);
+        $llm->emptyValueAsDefault = false;
+        $llm->value= $llm->getValue();  // 'gpt-4-turbo';
 
 
         new AdminSubmitButton($form);
@@ -41,9 +52,12 @@ class HopplyPage extends AbstractTemplateDocument
 
             $p = new Paragraph($layout);
 
-            $textarea->value = $promtRequest->getValue();
+            $systemPrompt->value= $systemPrompt->getValue();
+            $prompt->value = $promtRequest->getValue();
+            $llm->value=$prompt->getValue();
 
 
+            /*
             $data = [];
 
             $reader = new OstereiReader();
@@ -59,33 +73,14 @@ class HopplyPage extends AbstractTemplateDocument
 
             }
 
-            $jsonText = (new JsonText())->addData($data)->getJson();
+            $jsonText = (new JsonText())->addData($data)->getJson();*/
             
             
 
             $chatbot = new Chatbot();
-            $chatbot->systemPrompt= 'Du bist "Hopply" und bist der Osterhase der Stadt Luzern. 
-Du antwortest immer auf Deutsch.
-Du hast Osternester/Ostereier in der Stadt Luzern versteckt. 
-Du kannst Tipps geben.
-
-
-Du wünsccht immer viel Spass bei der Suche oder etwas ähnliches.
-Schreibe nie ein Doppel s, sondern immer ss. 
-
-Daten für die Osternester/Ostereier:
-
-- im feld "ort" ist das versteck
-- im feld "tipp" ist ein tipp, den du geben kannst oder auch nicht
-- im feld "gefunden" ist vermekt, ob das osternest schon gefunden ist
-- im feld "gefunden_date_time" ist der zeitpunkt als es gefunden wurde, wurde es gefunden gibst du das datum und uhrzeit an. das datum gibst du in deutschem datums format an. die uhrzeit ohne sekunden.
-- gib jeweils nur für ein osternest auskunft oder tipps
-- falls ein osternest gefunden wurde, dann gibst du kein tipp mehr
-
-' . $jsonText;
-
-
+            $chatbot->systemPrompt= (new SystemPromptRequest())->getValue();
             $chatbot->prompt= $promtRequest->getValue();
+            $chatbot->model = $llm->getValue();
 
             $p->content = $chatbot->getHtmlAnswer();
 

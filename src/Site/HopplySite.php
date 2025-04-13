@@ -17,8 +17,8 @@ class HopplySite extends AbstractSite
     protected function loadSite()
     {
         $this->title = 'Hopply';
-        $this->url = 'Hopply';
-        $this->restricted=true;
+        $this->url = 'hopply';
+        $this->restricted = true;
         $this->addRestrictedUsergroup(new HopplyUsergroup());
 
         HopplySite::$site = $this;

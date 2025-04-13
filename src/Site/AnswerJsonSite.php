@@ -17,16 +17,14 @@ class AnswerJsonSite extends AbstractSite
 
     protected function loadSite()
     {
-        //$this->title = 'Hopply';
-        $this->url = 'answer-public';
 
+        $this->url = 'answer-public';
         AnswerJsonSite::$site = $this;
 
     }
 
     public function loadContent()
     {
-
 
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: Content-Type, Authorization');
@@ -57,6 +55,7 @@ class AnswerJsonSite extends AbstractSite
 
 
         $chatbot = new Chatbot();
+        $chatbot->model = 'gpt-4o-mini';
         $chatbot->systemPrompt = 'Du bist "Hopply" und bist der Osterhase der Stadt Luzern. 
 Du antwortest immer auf Deutsch.
 Du hast Osternester/Ostereier in der Stadt Luzern versteckt. 
@@ -68,7 +67,6 @@ Schreibe nie ein Doppel s, sondern immer ss.
 
 Daten für die Osternester/Ostereier:
 
-- im feld "ort" ist das versteck
 - im feld "tipp" ist ein tipp, den du geben kannst oder auch nicht
 - im feld "gefunden" ist vermekt, ob das osternest schon gefunden ist
 - im feld "gefunden_date_time" ist der zeitpunkt als es gefunden wurde, wurde es gefunden gibst du das datum und uhrzeit an. das datum gibst du in deutschem datums format an. die uhrzeit ohne sekunden.
@@ -77,26 +75,12 @@ Daten für die Osternester/Ostereier:
 
 ' . $jsonText;
 
-        //$question = $json['question'];
-
         $chatbot->prompt=$json['question'];
 
-        /*$client = OpenAI::client($apiKey);
-
-        $result = $client->chat()->create([
-            'model' => 'o3-mini',  //   'gpt-4',
-            'messages' => [
-                ['role' => 'developer', 'content' => $systemPrompt],
-                ['role' => 'user', 'content' => $question],
-            ],
-        ]);*/
-
-
         $data = [];
-        $data['answer'] = $chatbot->getAnswer();  // getHtmlAnswer();  // $result['choices'][0]['message']['content'];
+        $data['answer'] = $chatbot->getAnswer();
 
         echo json_encode($data);
-
 
     }
 }

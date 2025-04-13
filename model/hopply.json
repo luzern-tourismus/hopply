@@ -6,6 +6,37 @@
     "model": [
         {
             "template": "default",
+            "model_id": "2dafaf99-bb12-4873-ac7b-098edb1b8fd5",
+            "label": "Large Language Model",
+            "class_name": "LargeLanguageModel",
+            "table_name": "hopply_large_language_model",
+            "namespace": "LuzernTourismus\\Hopply\\Data\\LargeLanguageModel",
+            "row_class_name": "",
+            "primary_index": "auto_increment",
+            "is_deleted": false,
+            "type": [
+                {
+                    "type": "text",
+                    "label": "Large Language Model",
+                    "field_name": "large_language_model",
+                    "variable_name": "largeLanguageModel",
+                    "allow_null": false,
+                    "is_deleted": false,
+                    "length": "255"
+                }
+            ],
+            "index": [
+                {
+                    "index_name": "large_language_model",
+                    "index_type": "unique_index",
+                    "field_name": [
+                        "large_language_model"
+                    ]
+                }
+            ]
+        },
+        {
+            "template": "default",
             "model_id": "5ab8b8a0-213e-4b41-b141-f88bc590a2e8",
             "label": "Osterei",
             "class_name": "Osterei",

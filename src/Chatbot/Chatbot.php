@@ -3,28 +3,35 @@
 namespace LuzernTourismus\Hopply\Chatbot;
 
 use Nemundo\Core\Base\AbstractBase;
-use Nemundo\Core\Config\ConfigFile;
-use Nemundo\Core\System\PhpConfig;
 use Nemundo\Core\Type\Text\Html;
 use Nemundo\Project\Config\ProjectConfigReader;
 
 class Chatbot extends AbstractBase
 {
 
-    public $systemPrompt='';
+    public $systemPrompt = '';
 
     public $prompt;
+
+    public $model;
+
+    private $client;
+
+
+    public function __construct()
+    {
+
+        $apiKey = (new ProjectConfigReader())->getValue('open_ai_api_key');
+        $this->client = \OpenAI::client($apiKey);
+
+    }
 
 
     public function getAnswer()
     {
 
-        $apiKey = (new ProjectConfigReader())->getValue('open_ai_api_key');
-
-        $client = \OpenAI::client($apiKey);
-
-        $result = $client->chat()->create([
-            'model' => 'o3-mini',  //   'gpt-4',
+        $result = $this->client->chat()->create([
+            'model' => $this->model,
             'messages' => [
                 ['role' => 'developer', 'content' => $this->systemPrompt],
                 ['role' => 'user', 'content' => $this->prompt],
@@ -33,7 +40,6 @@ class Chatbot extends AbstractBase
 
 
         $answer = $result['choices'][0]['message']['content'];
-
 
 
         return $answer;
@@ -51,8 +57,25 @@ class Chatbot extends AbstractBase
 
         return $html;
 
-
     }
 
+
+    public function getModel()
+    {
+
+        $response = $this->client->models()->list();
+
+        $list = [];
+        foreach ($response->data as $result) {
+
+            if ($result->object == 'model') {
+                $list[] = $result->id;
+            }
+
+        }
+
+        return $list;
+
+    }
 
 }

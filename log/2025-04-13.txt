@@ -1,1 +1,2 @@
 2025-04-13 15:44:33	Error CreateFolder. Path:qr\C:\git\hopply\tmp\
+2025-04-13 17:15:00	Query Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hopply.hopply_large_language_model' doesn't existSql: SELECT hopply_large_language_model.`id` `hopply_large_language_model_id`,hopply_large_language_model.`large_language_model` `hopply_large_language_model_large_language_model` FROM `hopply_large_language_model` hopply_large_language_model ORDER BY hopply_large_language_model.`large_language_model` ASC;

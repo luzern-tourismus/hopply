@@ -4,6 +4,7 @@ namespace LuzernTourismus\Hopply\Install;
 
 use LuzernTourismus\Hopply\Application\HopplyApplication;
 use LuzernTourismus\Hopply\Data\HopplyModelCollection;
+use LuzernTourismus\Hopply\Data\LargeLanguageModel\LargeLanguageModel;
 use LuzernTourismus\Hopply\Data\Osterei\Osterei;
 use LuzernTourismus\Hopply\Script\CleanScript;
 use LuzernTourismus\Hopply\Script\QrBuilderScript;
@@ -44,5 +45,35 @@ class HopplyInstall extends AbstractInstall
 
         }
 
+
+        /*$chatbot = new \LuzernTourismus\Hopply\Chatbot\Chatbot();
+        foreach ($chatbot->getModel() as $modelName) {
+            $data = new LargeLanguageModel();
+            $data->ignoreIfExists = true;
+            $data->largeLanguageModel = $modelName;
+            $data->save();
+        }*/
+
+        $this
+            ->addModel('gpt-4o')
+            ->addModel('o3-mini')
+            ->addModel('gpt-4o-mini');
+
     }
+
+
+    private function addModel($modelName)
+    {
+
+        $data = new LargeLanguageModel();
+        $data->ignoreIfExists = true;
+        $data->largeLanguageModel = $modelName;
+        $data->save();
+
+        return $this;
+
+
+    }
+
+
 }

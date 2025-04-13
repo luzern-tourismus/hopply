@@ -32,3 +32,12 @@ composer update
 
 https://github.com/chillerlan/php-qrcode
 
+## Open.Ai 
+
+https://github.com/openai-php/client
+
+
+
+
+
+
