@@ -36,13 +36,14 @@ class AnswerJsonSite extends AbstractSite
         $json = json_decode($body, true);
 
 
+        /*
         $data=[];
         $reader = new OstereiReader();
         $reader->addRandomOrder();
         foreach ($reader->getData() as $ostereiRow) {
 
             $row = [];
-            $row[$reader->model->nummer->fieldName] = $ostereiRow->nummer;
+            //$row[$reader->model->nummer->fieldName] = $ostereiRow->nummer;
             $row[$reader->model->tipp->fieldName] = $ostereiRow->tipp;
             $row[$reader->model->gefunden->fieldName] = $ostereiRow->gefunden;
             $row[$reader->model->gefundenDateTime->fieldName] = $ostereiRow->gefundenDateTime->getIsoDateTime();
@@ -51,15 +52,17 @@ class AnswerJsonSite extends AbstractSite
 
         }
 
-        $jsonText = (new JsonText())->addData($data)->getJson();
+        $jsonText = (new JsonText())->addData($data)->getJson();*/
 
 
         $chatbot = new Chatbot();
         $chatbot->model = 'gpt-4o-mini';
         $chatbot->systemPrompt = 'Du bist "Hopply" und bist der Osterhase der Stadt Luzern. 
-Du antwortest immer auf Deutsch.
 Du hast Osternester/Ostereier in der Stadt Luzern versteckt. 
-Du kannst Tipps geben.
+Du bist noch bschäftigt mit dem verstecken der Ostereier. Ab Donnerstag kannst du Tipps geben.';
+
+        /*
+        Aber
 
 
 Du wünsccht immer viel Spass bei der Suche oder etwas ähnliches.
@@ -73,7 +76,7 @@ Daten für die Osternester/Ostereier:
 - gib jeweils nur für ein osternest auskunft oder tipps
 - falls ein osternest gefunden wurde, dann gibst du kein tipp mehr
 
-' . $jsonText;
+' . $jsonText;*/
 
         $chatbot->prompt=$json['question'];
 
