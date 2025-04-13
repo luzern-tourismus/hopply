@@ -15,13 +15,13 @@ class LtagChatbot extends HTMLElement {
     connectedCallback() {
 
 
-        console.log(import.meta.url);
+        //console.log(import.meta.url);
 
-        let domain = window.location.origin;
+        //let domain = window.location.origin;
 
         //domain = document.currentScript.src
         //console.log(document.currentScript);
-        domain = 'httsp://data.luzern.com';
+        let domain = 'httsp://data.luzern.com';
 
         let local = this;
         let url = domain + "/public/Hopply-public2/answer-public";
