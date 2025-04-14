@@ -6,4 +6,5 @@ require "config.php";
     ->installCom('ltag-map.js')
     ->installCom('hopply-chatbot.js')
     ->installCom('hopply-chatbot.css')
-    ->installCom('hopply-wait.svg');
+    ->installCom('hopply-wait.svg')
+    ->installCom('hopply-test.html');

@@ -11,6 +11,16 @@ public $id;
 */
 public $systemPrompt;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $short;
+
+/**
+* @var \Nemundo\Model\Type\Number\YesNoType
+*/
+public $addOsterei;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = SystemPromptModel::class;
@@ -31,6 +41,22 @@ $this->systemPrompt->externalTableName = $this->externalTableName;
 $this->systemPrompt->aliasFieldName = $this->systemPrompt->tableName . "_" . $this->systemPrompt->fieldName;
 $this->systemPrompt->label = "System Prompt";
 $this->addType($this->systemPrompt);
+
+$this->short = new \Nemundo\Model\Type\Text\TextType();
+$this->short->fieldName = "short";
+$this->short->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->short->externalTableName = $this->externalTableName;
+$this->short->aliasFieldName = $this->short->tableName . "_" . $this->short->fieldName;
+$this->short->label = "Short";
+$this->addType($this->short);
+
+$this->addOsterei = new \Nemundo\Model\Type\Number\YesNoType();
+$this->addOsterei->fieldName = "add_osterei";
+$this->addOsterei->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->addOsterei->externalTableName = $this->externalTableName;
+$this->addOsterei->aliasFieldName = $this->addOsterei->tableName . "_" . $this->addOsterei->fieldName;
+$this->addOsterei->label = "Add Osterei";
+$this->addType($this->addOsterei);
 
 }
 }

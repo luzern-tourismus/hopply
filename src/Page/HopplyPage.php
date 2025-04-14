@@ -85,12 +85,11 @@ class HopplyPage extends AbstractTemplateDocument
             $p->content = $chatbot->getHtmlAnswer();
 
 
-
         }
 
 
-        $copy = new AdminCopyTextBox($layout);
-        $copy->value=AnswerJsonSite::$site->getUrlWithDomain();
+        /*$copy = new AdminCopyTextBox($layout);
+        $copy->value=AnswerJsonSite::$site->getUrlWithDomain();*/
 
 
 

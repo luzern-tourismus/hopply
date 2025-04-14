@@ -6,8 +6,8 @@ use LuzernTourismus\Hopply\Application\HopplyApplication;
 use LuzernTourismus\Hopply\Data\HopplyModelCollection;
 use LuzernTourismus\Hopply\Data\LargeLanguageModel\LargeLanguageModel;
 use LuzernTourismus\Hopply\Data\Osterei\Osterei;
+use LuzernTourismus\Hopply\Data\SystemPrompt\SystemPrompt;
 use LuzernTourismus\Hopply\Script\CleanScript;
-use LuzernTourismus\Hopply\Script\QrBuilderScript;
 use LuzernTourismus\Hopply\Usergroup\HopplyUsergroup;
 use Nemundo\App\Application\Type\Install\AbstractInstall;
 use Nemundo\App\Script\Setup\ScriptSetup;
@@ -27,7 +27,6 @@ class HopplyInstall extends AbstractInstall
         (new ModelCollectionSetup())->addCollection(new HopplyModelCollection());
         (new UsergroupSetup())->addUsergroup(new HopplyUsergroup());
         (new ScriptSetup(new HopplyApplication()))
-            //->addScript(new QrBuilderScript())
             ->addScript(new CleanScript());
 
         $loop = new ForLoop();
@@ -59,6 +58,10 @@ class HopplyInstall extends AbstractInstall
             ->addModel('o3-mini')
             ->addModel('gpt-4o-mini');
 
+        $this
+            ->addSystemPrompt('pre-easter',false)
+            ->addSystemPrompt('easter',true);
+
     }
 
 
@@ -72,8 +75,21 @@ class HopplyInstall extends AbstractInstall
 
         return $this;
 
-
     }
 
+
+    private function addSystemPrompt($short,$addOsterei)
+    {
+
+        $data = new SystemPrompt();
+        $data->ignoreIfExists = true;
+        $data->short = $short;
+        $data->systemPrompt='';
+        $data->addOsterei = $addOsterei;
+        $data->save();
+
+        return $this;
+
+    }
 
 }

@@ -123,9 +123,34 @@
                     "variable_name": "systemPrompt",
                     "allow_null": false,
                     "is_deleted": false
+                },
+                {
+                    "type": "text",
+                    "label": "Short",
+                    "field_name": "short",
+                    "variable_name": "short",
+                    "allow_null": false,
+                    "is_deleted": false,
+                    "length": "20"
+                },
+                {
+                    "type": "yes_no",
+                    "label": "Add Osterei",
+                    "field_name": "add_osterei",
+                    "variable_name": "addOsterei",
+                    "allow_null": false,
+                    "is_deleted": false
                 }
             ],
-            "index": []
+            "index": [
+                {
+                    "index_name": "short",
+                    "index_type": "unique_index",
+                    "field_name": [
+                        "short"
+                    ]
+                }
+            ]
         }
     ]
 }

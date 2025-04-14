@@ -1,6 +1,5 @@
 class LtagChatbot extends HTMLElement {
 
-
     textarea;
 
     button;
@@ -14,14 +13,10 @@ class LtagChatbot extends HTMLElement {
 
     connectedCallback() {
 
-
-        //console.log(import.meta.url);
-
-        //let domain = window.location.origin;
-
-        //domain = document.currentScript.src
-        //console.log(document.currentScript);
         let domain = 'https://data.luzern.com';
+        //let domain = '';
+
+        let systemPrompt = this.getAttribute("system-prompt");
 
         let local = this;
         let url = domain + "/public/Hopply-public2/answer-public";
@@ -40,7 +35,6 @@ class LtagChatbot extends HTMLElement {
             local.wait.src = domain + "/com/hopply-wait.svg";
             local.appendChild(local.wait);
 
-
             if (local.p !== undefined) {
                 local.p.remove();
                 local.button2.remove();
@@ -50,11 +44,11 @@ class LtagChatbot extends HTMLElement {
                 method: "POST", headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                }, body: JSON.stringify({question: local.textarea.value})
+                }, body: JSON.stringify({question: local.textarea.value, systemprompt: systemPrompt})
             })
                 .then(response => response.json())
                 .then(data => {
-                        console.log(data);
+                        //console.log(data);
                         //console.log(data.total_count);
 
                         local.p = document.createElement("p");
@@ -81,18 +75,11 @@ class LtagChatbot extends HTMLElement {
                 )
                 .catch(error => console.error('Error:', error));
 
-
         });
         this.appendChild(this.button);
-
 
     }
 
 }
 
-
 customElements.define('hopply-chatbot', LtagChatbot);
-
-
-
-

@@ -11,6 +11,16 @@ public $id;
 */
 public $systemPrompt;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $short;
+
+/**
+* @var \Nemundo\Model\Type\Number\YesNoType
+*/
+public $addOsterei;
+
 protected function loadModel() {
 $this->tableName = "hopply_system_prompt";
 $this->aliasTableName = "hopply_system_prompt";
@@ -33,6 +43,27 @@ $this->systemPrompt->fieldName = "system_prompt";
 $this->systemPrompt->aliasFieldName = "hopply_system_prompt_system_prompt";
 $this->systemPrompt->label = "System Prompt";
 $this->systemPrompt->allowNullValue = false;
+
+$this->short = new \Nemundo\Model\Type\Text\TextType($this);
+$this->short->tableName = "hopply_system_prompt";
+$this->short->externalTableName = "hopply_system_prompt";
+$this->short->fieldName = "short";
+$this->short->aliasFieldName = "hopply_system_prompt_short";
+$this->short->label = "Short";
+$this->short->allowNullValue = false;
+$this->short->length = 20;
+
+$this->addOsterei = new \Nemundo\Model\Type\Number\YesNoType($this);
+$this->addOsterei->tableName = "hopply_system_prompt";
+$this->addOsterei->externalTableName = "hopply_system_prompt";
+$this->addOsterei->fieldName = "add_osterei";
+$this->addOsterei->aliasFieldName = "hopply_system_prompt_add_osterei";
+$this->addOsterei->label = "Add Osterei";
+$this->addOsterei->allowNullValue = false;
+
+$index = new \Nemundo\Model\Definition\Index\ModelUniqueIndex($this);
+$index->indexName = "short";
+$index->addType($this->short);
 
 }
 }

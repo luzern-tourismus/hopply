@@ -4,6 +4,8 @@ namespace LuzernTourismus\Hopply\Site;
 
 use LuzernTourismus\Hopply\Chatbot\Chatbot;
 use LuzernTourismus\Hopply\Data\Osterei\OstereiReader;
+use LuzernTourismus\Hopply\Data\SystemPrompt\SystemPromptReader;
+use LuzernTourismus\Hopply\Request\SystemPromptRequest;
 use Nemundo\Core\Json\JsonText;
 use Nemundo\Web\Site\AbstractSite;
 
@@ -54,12 +56,56 @@ class AnswerJsonSite extends AbstractSite
 
         $jsonText = (new JsonText())->addData($data)->getJson();*/
 
+        $systemPrompt = '';
+
+        //$systemPromptRequest = new SystemPromptRequest();
+        //if ($systemPromptRequest->hasValue()) {
+
+        if (isset($json['systemprompt'])) {
+
+            $reader = new SystemPromptReader();
+            $reader->filter->andEqual($reader->model->short,$json['systemprompt']);  // $systemPromptRequest->getValue());
+            foreach ($reader->getData() as $systemPromptRow) {
+                $systemPrompt = $systemPromptRow->systemPrompt;
+
+                if ($systemPromptRow->addOsterei) {
+
+                    $data = [];
+                    $reader = new OstereiReader();
+                    $reader->addRandomOrder();
+                    foreach ($reader->getData() as $ostereiRow) {
+
+                        $row = [];
+                        //$row[$reader->model->nummer->fieldName] = $ostereiRow->nummer;
+                        $row[$reader->model->tipp->fieldName] = $ostereiRow->tipp;
+                        $row[$reader->model->gefunden->fieldName] = $ostereiRow->gefunden;
+                        $row[$reader->model->gefundenDateTime->fieldName] = $ostereiRow->gefundenDateTime->getIsoDateTime();
+
+                        $data[] = $row;
+
+                    }
+
+                    $jsonText = (new JsonText())->addData($data)->getJson();
+
+                    $systemPrompt = $systemPrompt . ' ' . $jsonText;
+
+                }
+
+            }
+
+        }
+
 
         $chatbot = new Chatbot();
         $chatbot->model = 'gpt-4o-mini';
-        $chatbot->systemPrompt = 'Du bist "Hopply" und bist der Osterhase der Stadt Luzern. 
+        $chatbot->systemPrompt = $systemPrompt;
+
+        /*
+        'Du bist "Hopply" und bist der Osterhase der Stadt Luzern.
 Du hast Osternester/Ostereier in der Stadt Luzern versteckt. 
 Du bist noch bschäftigt mit dem verstecken der Ostereier. Ab Donnerstag kannst du Tipps geben.';
+*/
+
 
         /*
         Aber
@@ -78,7 +124,7 @@ Daten für die Osternester/Ostereier:
 
 ' . $jsonText;*/
 
-        $chatbot->prompt=$json['question'];
+        $chatbot->prompt = $json['question'];
 
         $data = [];
         $data['answer'] = $chatbot->getAnswer();
