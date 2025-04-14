@@ -2,14 +2,12 @@
 
 namespace LuzernTourismus\Hopply\Content\SystemPrompt;
 
-use LuzernTourismus\Hopply\Data\Osterei\OstereiReader;
 use LuzernTourismus\Hopply\Data\SystemPrompt\SystemPromptReader;
-use LuzernTourismus\Hopply\Parameter\OstereiParameter;
-use LuzernTourismus\Hopply\Site\QrScanSite;
 use Nemundo\Admin\Com\Table\AdminTable;
 use Nemundo\Admin\Com\Table\AdminTableHeader;
 use Nemundo\Admin\Com\Table\Row\AdminTableRow;
 use Nemundo\Content\View\AbstractContentAdmin;
+use Nemundo\Core\Type\Text\Html;
 
 class SystemPromptAdmin extends AbstractContentAdmin
 {
@@ -36,7 +34,7 @@ class SystemPromptAdmin extends AbstractContentAdmin
 
             $row
                 ->addText($systemPromptRow->short)
-                ->addText($systemPromptRow->systemPrompt)
+                ->addText((new Html($systemPromptRow->systemPrompt))->getValue())
                 ->addYesNo($systemPromptRow->addOsterei);
 
 
