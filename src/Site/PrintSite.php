@@ -11,16 +11,11 @@ use LuzernTourismus\Hopply\Parameter\OstereiParameter;
 use LuzernTourismus\Hopply\Path\QrPath;
 use Nemundo\Core\Path\Path;
 use Nemundo\Core\Structure\ForLoop;
-use Nemundo\Html\Block\Div;
-use Nemundo\Html\Document\HtmlDocument;
-use Nemundo\Html\Heading\H2;
-use Nemundo\Html\Image\Img;
 use Nemundo\Pdf\Document\PdfDocument;
 use Nemundo\Pdf\Image\PdfImage;
 use Nemundo\Pdf\Page\NewPage;
 use Nemundo\Pdf\Text\PdfTextBox;
 use Nemundo\Pdf\Unit\PdfUnit;
-use Nemundo\Project\Path\TmpPath;
 use Nemundo\Web\Site\AbstractSite;
 
 
@@ -45,7 +40,7 @@ class PrintSite extends AbstractSite
     {
 
         $frontFilename = (new Path((new HopplyProject())->path))->addParentPath()->addPath('data')->addPath('front.png')->getFullFilename();
-        $backFilename =  (new Path((new HopplyProject())->path))->addParentPath()->addPath('data')->addPath('back.png')->getFullFilename();
+        $backFilename = (new Path((new HopplyProject())->path))->addParentPath()->addPath('data')->addPath('back.png')->getFullFilename();
 
         (new QrPath())->createPath();
 
@@ -76,7 +71,7 @@ class PrintSite extends AbstractSite
             (new QrCode($option))->render($data, $qrFilename);
 
             $hoehe = 43;
-            $breite = (1241/473)*43;
+            $breite = (1241 / 473) * 43;
             $abstand = 5;
             $anzahl = 6;
 
@@ -87,14 +82,14 @@ class PrintSite extends AbstractSite
             $img->height = $hoehe;
 
             $text = new PdfTextBox($pdf);
-            $text->text = 'Nr. '.$ostereiRow->nummer;
-            $text->x= $abstand+30;
-            $text->y =  (($hoehe + $abstand) * $n) + $abstand+7;
+            $text->text = 'Nr. ' . $ostereiRow->nummer;
+            $text->x = $abstand + 30;
+            $text->y = (($hoehe + $abstand) * $n) + $abstand + 7;
 
             $img = new PdfImage($pdf);
             $img->imageFilename = $qrFilename;
-            $img->x = 73+$abstand;
-            $img->y = (($hoehe+$abstand) * $n) + 5;
+            $img->x = 73 + $abstand;
+            $img->y = (($hoehe + $abstand) * $n) + 10;
             $img->width = 25;
 
             $n++;
@@ -104,12 +99,12 @@ class PrintSite extends AbstractSite
 
                 $loop = new ForLoop();
                 $loop->minNumber = 0;
-                $loop->maxNumber = $anzahl-1;
+                $loop->maxNumber = $anzahl - 1;
                 foreach ($loop->getData() as $number) {
 
                     $img = new PdfImage($pdf);
                     $img->imageFilename = $frontFilename;
-                    $img->x = 210-$abstand-$breite;
+                    $img->x = 210 - $abstand - $breite;
                     $img->y = (($hoehe + $abstand) * $number) + $abstand;
                     $img->height = $hoehe;
 
