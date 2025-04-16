@@ -40,18 +40,13 @@ class QrScanSite extends AbstractSite
 
         $reader = new OstereiReader();
         $reader->filter->andEqual($reader->model->uniqueId, $uniqueId);
-        foreach ($reader->getData() as $easterEggRow) {
-
-            /*$p = new Paragraph($this);
-            $p->content = 'Bravo, du hast ein Osternest gefunden.';
-
-            $p = new Paragraph($this);
-            $p->content = 'Osternest: '. $easterEggRow->ort;*/
+        $reader->filter->andEqual($reader->model->gefunden, false);
+        foreach ($reader->getData() as $ostereiRow) {
 
             $update = new OstereiUpdate();
             $update->gefunden = true;
             $update->gefundenDateTime = (new DateTime())->setNow();
-            $update->updateById($easterEggRow->id);
+            $update->updateById($ostereiRow->id);
 
             $found = true;
 
@@ -60,7 +55,7 @@ class QrScanSite extends AbstractSite
 
         if (!$found) {
 
-            (new Debug())->write('Ein technisches Problem liegt vor.');
+            //(new Debug())->write('Ein technisches Problem liegt vor.');
 
             /*$p = new Paragraph($this);
             $p->content = 'Ein technisches Problem liegt vor.';*/
