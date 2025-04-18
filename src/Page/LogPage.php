@@ -29,7 +29,7 @@ class LogPage extends AbstractTemplateDocument
         $reader = new LogReader();
 
         $reader->addOrder($reader->model->id, SortOrder::DESCENDING);
-        $reader->limit = 100;
+        $reader->limit = 500;
 
         (new AdminTableHeader($table))
             ->addText($reader->model->date->label)
