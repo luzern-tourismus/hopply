@@ -37,6 +37,111 @@
         },
         {
             "template": "default",
+            "model_id": "14c6df5c-394d-4a6d-9070-b5a5fd3e93ef",
+            "label": "Log",
+            "class_name": "Log",
+            "table_name": "hopply_log",
+            "namespace": "LuzernTourismus\\Hopply\\Data\\Log",
+            "row_class_name": "",
+            "primary_index": "auto_increment",
+            "is_deleted": false,
+            "type": [
+                {
+                    "type": "date",
+                    "label": "Date",
+                    "field_name": "date",
+                    "variable_name": "date",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "time",
+                    "label": "Time",
+                    "field_name": "time",
+                    "variable_name": "time",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "text",
+                    "label": "Ip Address",
+                    "field_name": "ip_address",
+                    "variable_name": "ipAddress",
+                    "allow_null": true,
+                    "is_deleted": false,
+                    "length": "255"
+                },
+                {
+                    "type": "text",
+                    "label": "Browser Agent",
+                    "field_name": "browser_agent",
+                    "variable_name": "browserAgent",
+                    "allow_null": true,
+                    "is_deleted": false,
+                    "length": "255"
+                },
+                {
+                    "type": "large_text",
+                    "label": "Prompt",
+                    "field_name": "prompt",
+                    "variable_name": "prompt",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "large_text",
+                    "label": "Answer",
+                    "field_name": "answer",
+                    "variable_name": "answer",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "text",
+                    "label": "Language Model",
+                    "field_name": "language_model",
+                    "variable_name": "languageModel",
+                    "allow_null": false,
+                    "is_deleted": false,
+                    "length": "255"
+                },
+                {
+                    "type": "number",
+                    "label": "Prompt Token",
+                    "field_name": "prompt_token",
+                    "variable_name": "promptToken",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "number",
+                    "label": "Completion Token",
+                    "field_name": "completion_token",
+                    "variable_name": "completionToken",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "number",
+                    "label": "Total Token",
+                    "field_name": "total_token",
+                    "variable_name": "totalToken",
+                    "allow_null": false,
+                    "is_deleted": false
+                },
+                {
+                    "type": "number",
+                    "label": "Remaining Token",
+                    "field_name": "remaining_token",
+                    "variable_name": "remainingToken",
+                    "allow_null": false,
+                    "is_deleted": false
+                }
+            ],
+            "index": []
+        },
+        {
+            "template": "default",
             "model_id": "5ab8b8a0-213e-4b41-b141-f88bc590a2e8",
             "label": "Osterei",
             "class_name": "Osterei",

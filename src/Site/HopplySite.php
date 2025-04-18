@@ -25,6 +25,7 @@ class HopplySite extends AbstractSite
 
         new OstereiSite($this);
         new SystemPromptSite($this);
+        new LogSite($this);
 
     }
 

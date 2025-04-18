@@ -4,6 +4,7 @@ use Nemundo\Model\Collection\AbstractModelCollection;
 class HopplyModelCollection extends AbstractModelCollection {
 protected function loadCollection() {
 $this->addModel(new \LuzernTourismus\Hopply\Data\LargeLanguageModel\LargeLanguageModelModel());
+$this->addModel(new \LuzernTourismus\Hopply\Data\Log\LogModel());
 $this->addModel(new \LuzernTourismus\Hopply\Data\Osterei\OstereiModel());
 $this->addModel(new \LuzernTourismus\Hopply\Data\SystemPrompt\SystemPromptModel());
 }

@@ -363,12 +363,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nemundo/core.git",
-                "reference": "7a8c17d7d8904d8390096ffcd6ab5b5d751d5208"
+                "reference": "5c198abf57c6c3d89f1429d457d7a4cbf82eb32b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nemundo/core/zipball/7a8c17d7d8904d8390096ffcd6ab5b5d751d5208",
-                "reference": "7a8c17d7d8904d8390096ffcd6ab5b5d751d5208",
+                "url": "https://api.github.com/repos/nemundo/core/zipball/5c198abf57c6c3d89f1429d457d7a4cbf82eb32b",
+                "reference": "5c198abf57c6c3d89f1429d457d7a4cbf82eb32b",
                 "shasum": ""
             },
             "default-branch": true,
@@ -393,7 +393,7 @@
                 "issues": "https://github.com/nemundo/core/issues",
                 "source": "https://github.com/nemundo/core/tree/master"
             },
-            "time": "2025-03-02T08:39:41+00:00"
+            "time": "2025-04-18T13:23:31+00:00"
         },
         {
             "name": "nemundo/db",
@@ -679,12 +679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/openai-php/client.git",
-                "reference": "067ab09561577775e385c3a81f203e031a616e7d"
+                "reference": "205be4abd2c2c3856829a1a679f9140dce1fbf83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openai-php/client/zipball/067ab09561577775e385c3a81f203e031a616e7d",
-                "reference": "067ab09561577775e385c3a81f203e031a616e7d",
+                "url": "https://api.github.com/repos/openai-php/client/zipball/205be4abd2c2c3856829a1a679f9140dce1fbf83",
+                "reference": "205be4abd2c2c3856829a1a679f9140dce1fbf83",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +763,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-11T10:43:02+00:00"
+            "time": "2025-04-17T20:53:04+00:00"
         },
         {
             "name": "php-http/discovery",
@@ -2126,7 +2126,8 @@
         "chillerlan/php-qrcode": 20,
         "openai-php/client": 20,
         "symfony/http-client": 20,
-        "nyholm/psr7": 20
+        "nyholm/psr7": 20,
+        "nemundo/pdf": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -40,5 +40,6 @@ content_view_content_type
 webservice_key
 webservice_service_request
 hopply_large_language_model
+hopply_log
 hopply_osterei
 hopply_system_prompt
