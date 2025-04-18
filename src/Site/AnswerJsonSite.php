@@ -97,10 +97,13 @@ class AnswerJsonSite extends AbstractSite
 
 
         $chatbot = new Chatbot();
-        $chatbot->model = 'gpt-4o-mini';
+        $chatbot->model ='gpt-4.1-mini';  // 'gpt-4o-mini';
         $chatbot->systemPrompt = $systemPrompt;
 
         /*
+         *  Uncaught OpenAI\Exceptions\ErrorException: Rate limit reached for gpt-4o-mini in organization org-lN17y6DNUjlyfiY6tuQzM27Z on requests per day (RPD): Limit 10000, Used 10000, Requested 1. Please try again in 8.64s. Visit https://platform.openai.com/account/rate-limits to learn more. in /home/luzernco/public_html/data_luzern_com/vendor/openai-php/client/src/Transporters/HttpTransporter.php:133 Stack trace: #0 /home/luzernco/public_html/data_luzern
+         *
+         *
         'Du bist "Hopply" und bist der Osterhase der Stadt Luzern.
 Du hast Osternester/Ostereier in der Stadt Luzern versteckt. 
 Du bist noch bschäftigt mit dem verstecken der Ostereier. Ab Donnerstag kannst du Tipps geben.';
