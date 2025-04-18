@@ -3,6 +3,7 @@
 namespace LuzernTourismus\Hopply\Page;
 
 use LuzernTourismus\Hopply\Com\Tab\HopplyTab;
+use LuzernTourismus\Hopply\Data\Log\LogCount;
 use LuzernTourismus\Hopply\Data\Log\LogReader;
 use Nemundo\Admin\Com\Layout\AdminFlexboxLayout;
 use Nemundo\Admin\Com\Table\AdminTable;
@@ -10,6 +11,7 @@ use Nemundo\Admin\Com\Table\AdminTableHeader;
 use Nemundo\Admin\Com\Table\Row\AdminTableRow;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Db\Sql\Order\SortOrder;
+use Nemundo\Html\Paragraph\Paragraph;
 
 class LogPage extends AbstractTemplateDocument
 {
@@ -19,6 +21,8 @@ class LogPage extends AbstractTemplateDocument
         $layout = new AdminFlexboxLayout($this);
         new HopplyTab($layout);
 
+        $p = new Paragraph($layout);
+        $p->content = 'Total: '.(new LogCount())->getFormatCount();
 
         $table = new AdminTable($layout);
 
