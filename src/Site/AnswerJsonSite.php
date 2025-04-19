@@ -100,7 +100,7 @@ class AnswerJsonSite extends AbstractSite
         $promt = $json['question'];
 
         $chatbot = new Chatbot();
-        $chatbot->model = 'gpt-4.1-mini';  // 'gpt-4o-mini';
+        $chatbot->model ='gpt-4o-mini';   // 'gpt-4.1-nano';  //  'gpt-4o-mini';   // 'gpt-4.1-mini';  // 'gpt-4o-mini';
         $chatbot->systemPrompt = $systemPrompt;
         $chatbot->prompt = $promt;
         $answer = $chatbot->getAnswer();

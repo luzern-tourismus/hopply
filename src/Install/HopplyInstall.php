@@ -56,11 +56,12 @@ class HopplyInstall extends AbstractInstall
         $this
             ->addModel('gpt-4o')
             ->addModel('o3-mini')
-            ->addModel('gpt-4o-mini');
+            ->addModel('gpt-4o-mini')
+            ->addModel('gpt-4.1-nano');
 
         $this
-            ->addSystemPrompt('pre-easter',false)
-            ->addSystemPrompt('easter',true);
+            ->addSystemPrompt('pre-easter', false)
+            ->addSystemPrompt('easter', true);
 
     }
 
@@ -78,13 +79,13 @@ class HopplyInstall extends AbstractInstall
     }
 
 
-    private function addSystemPrompt($short,$addOsterei)
+    private function addSystemPrompt($short, $addOsterei)
     {
 
         $data = new SystemPrompt();
         $data->ignoreIfExists = true;
         $data->short = $short;
-        $data->systemPrompt='';
+        $data->systemPrompt = '';
         $data->addOsterei = $addOsterei;
         $data->save();
 
