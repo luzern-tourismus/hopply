@@ -167,5 +167,9 @@ $this->remainingToken->aliasFieldName = "hopply_log_remaining_token";
 $this->remainingToken->label = "Remaining Token";
 $this->remainingToken->allowNullValue = false;
 
+$index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
+$index->indexName = "ip_address";
+$index->addType($this->ipAddress);
+
 }
 }

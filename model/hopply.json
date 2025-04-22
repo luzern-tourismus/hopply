@@ -138,7 +138,15 @@
                     "is_deleted": false
                 }
             ],
-            "index": []
+            "index": [
+                {
+                    "index_name": "ip_address",
+                    "index_type": "index",
+                    "field_name": [
+                        "ip_address"
+                    ]
+                }
+            ]
         },
         {
             "template": "default",

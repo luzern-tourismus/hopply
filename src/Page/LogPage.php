@@ -9,7 +9,10 @@ use Nemundo\Admin\Com\Layout\AdminFlexboxLayout;
 use Nemundo\Admin\Com\Table\AdminTable;
 use Nemundo\Admin\Com\Table\AdminTableHeader;
 use Nemundo\Admin\Com\Table\Row\AdminTableRow;
+use Nemundo\Admin\Com\Title\AdminSubtitle;
 use Nemundo\Com\Template\AbstractTemplateDocument;
+use Nemundo\Db\DbConfig;
+use Nemundo\Db\Sql\Field\CountField;
 use Nemundo\Db\Sql\Order\SortOrder;
 use Nemundo\Html\Paragraph\Paragraph;
 
@@ -23,6 +26,22 @@ class LogPage extends AbstractTemplateDocument
 
         $p = new Paragraph($layout);
         $p->content = 'Total: '.(new LogCount())->getFormatCount();
+
+        $count = new LogReader();
+        $count->addGroup($count->model->ipAddress);
+
+        $p = new Paragraph($layout);
+        $p->content = 'Total Ip Adressen: '.$count->getTotalCount();
+
+
+
+
+
+
+        $subtitle = new AdminSubtitle($layout);
+        $subtitle->content = 'Log';
+
+
 
         $table = new AdminTable($layout);
 
