@@ -8,8 +8,6 @@ $chatbot->prompt = 'wo kann ich in luzern bier trinken';
 $chatbot->model ='gpt-4.1-nano';   //   'gpt-4o-mini';    // 'gpt-4.1';  // 'gpt-4.1-mini';
 $answer = $chatbot->getAnswer();
 
-(new \Nemundo\Core\Debug\Debug())->write($answer);
+//(new \Nemundo\Core\Debug\Debug())->write($answer);
 
-
-
-
+(new Nemundo\Core\Debug\Debug())->write($answer);
