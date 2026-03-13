@@ -24,19 +24,17 @@ class SystemPromptAdmin extends AbstractContentAdmin
             ->addText($reader->model->short->label)
             ->addText($reader->model->systemPrompt->label)
             ->addText($reader->model->addOsterei->label)
-            ->addEmpty(3);
+            ->addEmpty(1);
 
 
         foreach ($reader->getData() as $systemPromptRow) {
 
             $row = new AdminTableRow($table);
 
-
             $row
                 ->addText($systemPromptRow->short)
                 ->addText((new Html($systemPromptRow->systemPrompt))->getValue())
                 ->addYesNo($systemPromptRow->addOsterei);
-
 
             $row->addIconActionSite($this->getEditSite($systemPromptRow->id));
             //->addIconActionSite($this->getDeleteSite($easterEggRow->id));

@@ -2,8 +2,8 @@
 
 namespace LuzernTourismus\Hopply\Site;
 
-use LuzernTourismus\Hopply\Page\HopplyPage;
-use LuzernTourismus\Hopply\Usergroup\HopplyUsergroup;
+use LuzernTourismus\Hopply\Site\Json\AnswerJsonSite;
+use LuzernTourismus\Hopply\Site\Json\EggCounterJsonSite;
 use Nemundo\Web\Site\AbstractSite;
 
 class HopplyPublicSite extends AbstractSite
@@ -17,10 +17,12 @@ class HopplyPublicSite extends AbstractSite
     protected function loadSite()
     {
         $this->title = 'Hopply';
-        $this->url = 'Hopply-public2';
+        //$this->url = 'Hopply-public2';
+        $this->url = 'hopply-json';
 
         new QrScanSite($this);
         new AnswerJsonSite($this);
+        new EggCounterJsonSite($this);
 
 
     }

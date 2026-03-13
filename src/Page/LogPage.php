@@ -33,15 +33,8 @@ class LogPage extends AbstractTemplateDocument
         $p = new Paragraph($layout);
         $p->content = 'Total Ip Adressen: '.$count->getTotalCount();
 
-
-
-
-
-
-        $subtitle = new AdminSubtitle($layout);
-        $subtitle->content = 'Log';
-
-
+        /*$subtitle = new AdminSubtitle($layout);
+        $subtitle->content = 'Log';*/
 
         $table = new AdminTable($layout);
 

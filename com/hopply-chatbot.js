@@ -19,7 +19,42 @@ class LtagChatbot extends HTMLElement {
         let systemPrompt = this.getAttribute("system-prompt");
 
         let local = this;
-        let url = domain + "/public/Hopply-public2/answer-public";
+
+        let eggCount =  document.createElement("p");
+        eggCount.className = "hopply-p";
+        //local.p.innerText = data.gefunden + " Ostereier gefunden von Total " + data.total;
+        local.appendChild(eggCount);
+
+
+
+        //let url = domain + "/public/Hopply-public2/answer-public";
+        let url = domain + "/public/hopply-json/answer-public";
+
+        let countUrl = domain + "/public/hopply-json/egg-count";
+        //let countUrl = "http://localhost:20926/public/hopply-json/egg-count";
+
+
+        fetch(countUrl, {
+            method: "GET", headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                    console.log(data);
+                    //console.log(data.total_count);
+
+                    /*local.p = document.createElement("p");
+                    local.p.className = "hopply-p";*/
+                    eggCount.innerText = data.gefunden + " Ostereier gefunden von Total " + data.total;
+                    //local.appendChild(local.p);
+
+
+                }
+            )
+            .catch(error => console.error('Error:', error));
+
 
         this.textarea = document.createElement("textarea");
         this.textarea.className = "hopply-textarea";

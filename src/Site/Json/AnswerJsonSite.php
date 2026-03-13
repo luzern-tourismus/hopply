@@ -1,14 +1,11 @@
 <?php
 
-namespace LuzernTourismus\Hopply\Site;
+namespace LuzernTourismus\Hopply\Site\Json;
 
 use LuzernTourismus\Hopply\Chatbot\Chatbot;
-use LuzernTourismus\Hopply\Data\Log\Log;
 use LuzernTourismus\Hopply\Data\Osterei\OstereiReader;
 use LuzernTourismus\Hopply\Data\SystemPrompt\SystemPromptReader;
-use Nemundo\Com\Device\BrowserInformation;
 use Nemundo\Core\Json\JsonText;
-use Nemundo\Core\Type\DateTime\DateTime;
 use Nemundo\Web\Site\AbstractSite;
 
 class AnswerJsonSite extends AbstractSite

@@ -5,18 +5,12 @@ namespace LuzernTourismus\Hopply\Page;
 use LuzernTourismus\Hopply\Chatbot\Chatbot;
 use LuzernTourismus\Hopply\Com\ListBox\LargeLanguageModelListBox;
 use LuzernTourismus\Hopply\Com\Tab\HopplyTab;
-use LuzernTourismus\Hopply\Data\Osterei\OstereiReader;
 use LuzernTourismus\Hopply\Request\PromptRequest;
 use LuzernTourismus\Hopply\Request\SystemPromptRequest;
-use LuzernTourismus\Hopply\Site\AnswerJsonSite;
 use Nemundo\Admin\Com\Button\AdminSubmitButton;
-use Nemundo\Admin\Com\Copy\AdminCopyTextBox;
-use Nemundo\Admin\Com\Form\AdminSearchForm;
 use Nemundo\Admin\Com\Layout\AdminFlexboxLayout;
 use Nemundo\Admin\Com\ListBox\AdminLargeTextBox;
 use Nemundo\Com\Template\AbstractTemplateDocument;
-use Nemundo\Core\GeoJson\Feature\PointFeature;
-use Nemundo\Core\Json\JsonText;
 use Nemundo\Html\Form\Form;
 use Nemundo\Html\Paragraph\Paragraph;
 

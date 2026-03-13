@@ -29,8 +29,9 @@ https://github.com/openai-php/client
 ## Web Component
 
 ```
-<script src="/com/ltag-map.js"></script>
-<ltag-map></ltag-map>
+<script src="https://[domain]/com/hopply-chatbot.js"></script> 
+<link rel="stylesheet" href="https://[domain]/com/hopply-chatbot.css" /> 
+<hopply-chatbot system-prompt="easter"></hopply-chatbot>
 ```
 
 

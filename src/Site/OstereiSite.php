@@ -10,7 +10,7 @@ class OstereiSite extends AbstractSite
     protected function loadSite()
     {
         $this->title = 'Osterei';
-        $this->url = 'Osterei';
+        $this->url = 'osterei';
 
         new PrintSite($this);
         new ResetSite($this);
