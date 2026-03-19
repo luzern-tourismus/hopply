@@ -47,8 +47,9 @@ class OstereiAdmin extends AbstractContentAdmin
             } else {
                 $row->addEmpty();
             }
-                $row->addIconActionSite($this->getEditSite($easterEggRow->id));
-                //->addIconActionSite($this->getDeleteSite($easterEggRow->id));
+            $row
+                ->addIconActionSite($this->getEditSite($easterEggRow->id))
+                ->addIconActionSite($this->getDeleteSite($easterEggRow->id));
 
             $site = clone(QrScanSite::$site);
             $site->addParameter(new OstereiParameter($easterEggRow->uniqueId));
@@ -56,7 +57,7 @@ class OstereiAdmin extends AbstractContentAdmin
             $data = $site->getUrlWithDomain();
 
 
-            $row->addHyperlink($data,'QR Scan',true);
+            $row->addHyperlink($data, 'QR Scan', true);
 
 
             /*

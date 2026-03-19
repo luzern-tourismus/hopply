@@ -58,12 +58,12 @@ class LtagChatbot extends HTMLElement {
 
         this.textarea = document.createElement("textarea");
         this.textarea.className = "hopply-textarea";
-        this.textarea.placeholder = "Frage Hopply etwas ...";
+        this.textarea.placeholder = "Frage Hoppli etwas ...";
         this.appendChild(this.textarea);
 
         this.button = document.createElement("button");
         this.button.className = "hopply-button";
-        this.button.innerText = "Hopply fragen";
+        this.button.innerText = "Hoppli fragen";
         this.button.addEventListener("click", function () {
 
             local.wait = document.createElement("img");
