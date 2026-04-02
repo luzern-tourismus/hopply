@@ -12,35 +12,35 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chillerlan/php-qrcode.git",
-                "reference": "2f8cec4dbb5b23bfeeb9d59ce04ff676517b51da"
+                "reference": "1a44a54d0640854daf22bae8f27cdf8c18c405a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/2f8cec4dbb5b23bfeeb9d59ce04ff676517b51da",
-                "reference": "2f8cec4dbb5b23bfeeb9d59ce04ff676517b51da",
+                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/1a44a54d0640854daf22bae8f27cdf8c18c405a1",
+                "reference": "1a44a54d0640854daf22bae8f27cdf8c18c405a1",
                 "shasum": ""
             },
             "require": {
-                "chillerlan/php-settings-container": "^3.2.1",
+                "chillerlan/php-settings-container": "^4.0",
                 "ext-mbstring": "*",
-                "php": "^8.2"
+                "php": "^8.4"
             },
             "require-dev": {
-                "chillerlan/php-authenticator": "^5.2.1",
+                "chillerlan/php-authenticator": "^6.0",
                 "ext-fileinfo": "*",
                 "intervention/image": "^3.11",
                 "phan/phan": "^6.0.1",
                 "phpbench/phpbench": "^1.4",
                 "phpmd/phpmd": "^2.15",
-                "phpstan/phpstan": "^2.1.28",
-                "phpstan/phpstan-deprecation-rules": "^2.0.3",
-                "phpunit/phpunit": "^11.5",
+                "phpstan/phpstan": "^2.1.40",
+                "phpstan/phpstan-deprecation-rules": "^2.0.4",
+                "phpunit/phpunit": "^13.0",
                 "setasign/fpdf": "^1.8.6",
-                "slevomat/coding-standard": "^8.23",
+                "slevomat/coding-standard": "^8.28",
                 "squizlabs/php_codesniffer": "^4.0"
             },
             "suggest": {
-                "chillerlan/php-authenticator": "Yet another Google authenticator! Also creates URIs for mobile apps.",
+                "chillerlan/2fa-qrcode-bundle": "An authenticator/qrcode bundle for MFA integration in frameworks and applications.",
                 "intervention/image": "More advanced GD and ImageMagick output.",
                 "setasign/fpdf": "Required to use the QR FPDF output.",
                 "simple-icons/simple-icons": "SVG icons that you can use to embed as logos in the QR Code"
@@ -80,7 +80,7 @@
                     "homepage": "https://github.com/chillerlan/php-qrcode/graphs/contributors"
                 }
             ],
-            "description": "A QR Code generator and reader with a user-friendly API. PHP 8.2+",
+            "description": "A QR Code generator and reader with a user-friendly API. PHP 8.4+",
             "homepage": "https://github.com/chillerlan/php-qrcode",
             "keywords": [
                 "phpqrcode",
@@ -102,32 +102,34 @@
                     "type": "Ko-Fi"
                 }
             ],
-            "time": "2026-02-10T17:30:55+00:00"
+            "time": "2026-03-21T00:06:01+00:00"
         },
         {
             "name": "chillerlan/php-settings-container",
-            "version": "3.2.1",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chillerlan/php-settings-container.git",
-                "reference": "95ed3e9676a1d47cab2e3174d19b43f5dbf52681"
+                "reference": "ab8ed1c2075e3400ec28bc75adb8be52129fa180"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chillerlan/php-settings-container/zipball/95ed3e9676a1d47cab2e3174d19b43f5dbf52681",
-                "reference": "95ed3e9676a1d47cab2e3174d19b43f5dbf52681",
+                "url": "https://api.github.com/repos/chillerlan/php-settings-container/zipball/ab8ed1c2075e3400ec28bc75adb8be52129fa180",
+                "reference": "ab8ed1c2075e3400ec28bc75adb8be52129fa180",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^8.1"
+                "php": "^8.4"
             },
             "require-dev": {
+                "phan/phan": "^6.0.2",
                 "phpmd/phpmd": "^2.15",
-                "phpstan/phpstan": "^1.11",
-                "phpstan/phpstan-deprecation-rules": "^1.2",
-                "phpunit/phpunit": "^10.5",
-                "squizlabs/php_codesniffer": "^3.10"
+                "phpstan/phpstan": "^2.1.41",
+                "phpstan/phpstan-deprecation-rules": "^2.0.4",
+                "phpunit/phpunit": "^13.0",
+                "slevomat/coding-standard": "^8.28",
+                "squizlabs/php_codesniffer": "^4.0"
             },
             "type": "library",
             "autoload": {
@@ -152,7 +154,8 @@
                 "Settings",
                 "configuration",
                 "container",
-                "helper"
+                "helper",
+                "property hook"
             ],
             "support": {
                 "issues": "https://github.com/chillerlan/php-settings-container/issues",
@@ -168,7 +171,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-07-16T11:13:48+00:00"
+            "time": "2026-03-20T22:06:15+00:00"
         },
         {
             "name": "composer/pcre",
@@ -626,12 +629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nemundo/core.git",
-                "reference": "81885f5ad32bf7075f216a84b4620216bbab5239"
+                "reference": "9fec1eaba60bc5def50b98fcc24a80bf204234df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nemundo/core/zipball/81885f5ad32bf7075f216a84b4620216bbab5239",
-                "reference": "81885f5ad32bf7075f216a84b4620216bbab5239",
+                "url": "https://api.github.com/repos/nemundo/core/zipball/9fec1eaba60bc5def50b98fcc24a80bf204234df",
+                "reference": "9fec1eaba60bc5def50b98fcc24a80bf204234df",
                 "shasum": ""
             },
             "default-branch": true,
@@ -656,7 +659,7 @@
                 "issues": "https://github.com/nemundo/core/issues",
                 "source": "https://github.com/nemundo/core/tree/master"
             },
-            "time": "2026-03-06T09:49:19+00:00"
+            "time": "2026-03-25T16:21:10+00:00"
         },
         {
             "name": "nemundo/db",
@@ -705,12 +708,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nemundo/framework.git",
-                "reference": "cd5aaa9ff380bab130d21e65e4929e8e09eb6743"
+                "reference": "3710e10ad65a87b31496c34f7ccbdd0493bf7954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nemundo/framework/zipball/cd5aaa9ff380bab130d21e65e4929e8e09eb6743",
-                "reference": "cd5aaa9ff380bab130d21e65e4929e8e09eb6743",
+                "url": "https://api.github.com/repos/nemundo/framework/zipball/3710e10ad65a87b31496c34f7ccbdd0493bf7954",
+                "reference": "3710e10ad65a87b31496c34f7ccbdd0493bf7954",
                 "shasum": ""
             },
             "require": {
@@ -744,7 +747,7 @@
                 "issues": "https://github.com/nemundo/framework/issues",
                 "source": "https://github.com/nemundo/framework/tree/master"
             },
-            "time": "2026-03-09T16:15:38+00:00"
+            "time": "2026-03-29T11:23:47+00:00"
         },
         {
             "name": "nemundo/html",
@@ -944,12 +947,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/openai-php/client.git",
-                "reference": "6a5456d9c6bd0098b63a37607ed514c222419374"
+                "reference": "49dceef50a60d790cd33ccd47c4dd2c71d999da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openai-php/client/zipball/6a5456d9c6bd0098b63a37607ed514c222419374",
-                "reference": "6a5456d9c6bd0098b63a37607ed514c222419374",
+                "url": "https://api.github.com/repos/openai-php/client/zipball/49dceef50a60d790cd33ccd47c4dd2c71d999da3",
+                "reference": "49dceef50a60d790cd33ccd47c4dd2c71d999da3",
                 "shasum": ""
             },
             "require": {
@@ -1028,7 +1031,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-10T14:47:53+00:00"
+            "time": "2026-04-01T12:12:44+00:00"
         },
         {
             "name": "php-http/discovery",
@@ -1225,12 +1228,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "a1dacfdf79e4803c93548355f8ed952ff8516321"
+                "reference": "36013a3db550618f331c5ae5a64c5e555428bf24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/a1dacfdf79e4803c93548355f8ed952ff8516321",
-                "reference": "a1dacfdf79e4803c93548355f8ed952ff8516321",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/36013a3db550618f331c5ae5a64c5e555428bf24",
+                "reference": "36013a3db550618f331c5ae5a64c5e555428bf24",
                 "shasum": ""
             },
             "require": {
@@ -1327,7 +1330,7 @@
                 "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
                 "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/master"
             },
-            "time": "2026-03-06T23:51:38+00:00"
+            "time": "2026-04-01T13:35:13+00:00"
         },
         {
             "name": "phpoffice/phpword",
@@ -1888,12 +1891,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "bd57b0a5c68c9a59f3f7c71583f0829110feee5d"
+                "reference": "588c93251856e0f1a905b9a455d429ea8d194231"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/bd57b0a5c68c9a59f3f7c71583f0829110feee5d",
-                "reference": "bd57b0a5c68c9a59f3f7c71583f0829110feee5d",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/588c93251856e0f1a905b9a455d429ea8d194231",
+                "reference": "588c93251856e0f1a905b9a455d429ea8d194231",
                 "shasum": ""
             },
             "require": {
@@ -1966,7 +1969,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-14T14:51:52+00:00"
+            "time": "2026-04-02T14:20:11+00:00"
         },
         {
             "name": "symfony/event-dispatcher-contracts",
@@ -2238,12 +2241,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "c16f368dc1567e41fc8b004d69343204b40498ae"
+                "reference": "cf279c10d83e24a0c7a072452e6fb27a93407570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/c16f368dc1567e41fc8b004d69343204b40498ae",
-                "reference": "c16f368dc1567e41fc8b004d69343204b40498ae",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/cf279c10d83e24a0c7a072452e6fb27a93407570",
+                "reference": "cf279c10d83e24a0c7a072452e6fb27a93407570",
                 "shasum": ""
             },
             "require": {
@@ -2311,7 +2314,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-25T17:08:26+00:00"
+            "time": "2026-03-30T15:21:58+00:00"
         },
         {
             "name": "symfony/mime",
@@ -2319,12 +2322,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "13fa83764774a62e35d6362b2025a2850628f358"
+                "reference": "b21a79fb29dc8365c15d15722236f1ff75ee973e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/13fa83764774a62e35d6362b2025a2850628f358",
-                "reference": "13fa83764774a62e35d6362b2025a2850628f358",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/b21a79fb29dc8365c15d15722236f1ff75ee973e",
+                "reference": "b21a79fb29dc8365c15d15722236f1ff75ee973e",
                 "shasum": ""
             },
             "require": {
@@ -2398,7 +2401,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-06T13:17:50+00:00"
+            "time": "2026-03-30T15:21:58+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -2747,12 +2750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "639fa48ea277babeb67e1432ce60a029d795bd63"
+                "reference": "d25d82433a80eba6aa0e6c24b61d7370d99e444a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/639fa48ea277babeb67e1432ce60a029d795bd63",
-                "reference": "639fa48ea277babeb67e1432ce60a029d795bd63",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d25d82433a80eba6aa0e6c24b61d7370d99e444a",
+                "reference": "d25d82433a80eba6aa0e6c24b61d7370d99e444a",
                 "shasum": ""
             },
             "require": {
@@ -2827,7 +2830,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-13T20:42:21+00:00"
+            "time": "2026-03-28T09:44:51+00:00"
         }
     ],
     "packages-dev": [],
