@@ -31,39 +31,14 @@ class AnswerJsonSite extends AbstractSite
         header('Access-Control-Allow-Headers: Content-Type, Authorization');
         header("HTTP/1.1 200 OK");
 
-
         $body = file_get_contents('php://input');
-
         $json = json_decode($body, true);
-
-
-        /*
-        $data=[];
-        $reader = new OstereiReader();
-        $reader->addRandomOrder();
-        foreach ($reader->getData() as $ostereiRow) {
-
-            $row = [];
-            //$row[$reader->model->nummer->fieldName] = $ostereiRow->nummer;
-            $row[$reader->model->tipp->fieldName] = $ostereiRow->tipp;
-            $row[$reader->model->gefunden->fieldName] = $ostereiRow->gefunden;
-            $row[$reader->model->gefundenDateTime->fieldName] = $ostereiRow->gefundenDateTime->getIsoDateTime();
-
-            $data[] = $row;
-
-        }
-
-        $jsonText = (new JsonText())->addData($data)->getJson();*/
-
         $systemPrompt = '';
-
-        //$systemPromptRequest = new SystemPromptRequest();
-        //if ($systemPromptRequest->hasValue()) {
 
         if (isset($json['systemprompt'])) {
 
             $reader = new SystemPromptReader();
-            $reader->filter->andEqual($reader->model->short, $json['systemprompt']);  // $systemPromptRequest->getValue());
+            $reader->filter->andEqual($reader->model->short, $json['systemprompt']);
             foreach ($reader->getData() as $systemPromptRow) {
                 $systemPrompt = $systemPromptRow->systemPrompt;
 
@@ -106,9 +81,6 @@ class AnswerJsonSite extends AbstractSite
         $data['answer'] = $answer;
 
         echo json_encode($data);
-
-
-
 
     }
 }
